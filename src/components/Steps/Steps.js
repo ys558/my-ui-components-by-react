@@ -1,10 +1,10 @@
 import React from 'react';
-import './Steps.css'
+import './Steps.scss'
 
 const Steps = (props) => {
   const {currentStep} = props
   return (
-    <div>
+    <div className='steps'>
       {
         React.Children.map(props.children, (child, index) =>{
           // const length = React.Children.count(props.children)
@@ -19,11 +19,10 @@ const Steps = (props) => {
 const Step = (props) => {
   const { ctx, status, date, index, currentStep } = props
   return (
-    <div className='steps-container'>
-      123
-      <div className='steps-tail'></div>
-      <div className='steps-icon'></div>
-      <div className='steps-content'></div>
+    <div className='step-container'>
+        <div className='step-icon'>{' '}</div>
+        <div className='step-tail'></div>
+        <div className='step-content'>content</div>
     </div>
   )
 }

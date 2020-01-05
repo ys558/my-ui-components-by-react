@@ -1,0 +1,31 @@
+$main-color: #1890FF;
+
+.steps{
+  display: flex;
+  .step-container {
+    width: 10rem;
+    height: 5rem;
+    position: relative;
+    .step-icon {
+      position: absolute;
+      border-radius: 50%;
+      top: 1.5rem;
+      left: 3.5rem;
+      width: 15px;
+      height: 15px;
+      background-color: $main-color;
+    }
+    .step-tail {
+      position: absolute;
+      border-bottom: solid 3px $main-color;
+      width: 10.5rem;
+      top: 1.82rem;
+      left: 3.5rem;
+    }
+    .step-content {
+      position: absolute;
+      top: 2.8rem;
+      left: 2.3rem;
+    }
+  }
+}
