@@ -1,24 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+import {Step, Steps} from './components/Steps'
+import stepsData from './config/data/steps'
+
+function App () {
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      {/* 1. Steps步骤，进度条 */}
+      <Steps currentStep={1}>
+        {
+          stepsData.map(
+            (item, index) => {
+              const {title, status, date} = item
+              return <Step ctx={title} status={status} date={date} key={index} />
+            }
+          )
+        }
+      </Steps>
     </div>
   );
 }
