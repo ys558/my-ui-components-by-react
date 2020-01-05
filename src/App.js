@@ -10,7 +10,7 @@ function App () {
     <div className="App">
 
       {/* 1. Steps步骤，进度条 */}
-      <Steps currentStep={1}>
+      <Steps currentStep={stepsData.findIndex(i=> i.status === 'current')}>
         {
           stepsData.map(
             (item, index) => {

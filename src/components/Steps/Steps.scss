@@ -1,4 +1,5 @@
 $main-color: #1890FF;
+$not-reach: rgb(218, 214, 214);
 
 .steps{
   display: flex;
@@ -14,18 +15,43 @@ $main-color: #1890FF;
       width: 15px;
       height: 15px;
       background-color: $main-color;
+      &-not-reach {
+        @extend .step-icon;
+        background-color: $not-reach;
+      }
+      &-current {
+        @extend .step-icon;
+        top: 1.4rem;
+        z-index: 3;
+        width: 19px;
+        height: 19px;
+        background-color: $main-color;
+      }
     }
     .step-tail {
       position: absolute;
-      border-bottom: solid 3px $main-color;
+      border-bottom: solid 2.4px $main-color;
       width: 10.5rem;
-      top: 1.82rem;
+      top: 1.88rem;
       left: 3.5rem;
+      &-not-reach {
+        @extend .step-tail;
+        border-bottom: dotted 2.4px $not-reach;
+        &-last {
+          display: none;
+        }
+      }
     }
     .step-content {
       position: absolute;
-      top: 2.8rem;
-      left: 2.3rem;
+      top: 3.2rem;
+      left: 1.4rem;
+      .step-content-title {
+        font-size: 0.75rem;
+      }
+      .step-content-description {
+        font-size: 0.9rem;
+      }
     }
   }
 }
