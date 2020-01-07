@@ -18,7 +18,6 @@ const Steps = (props) => {
 
 const Step = (props) => {
   const { ctx, status, date, index, currentStep, length } = props
-  console.log(props)
   return (
     <div className='step-container'>
       {stepIcon(status)}

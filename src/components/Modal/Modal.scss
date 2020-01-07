@@ -1,0 +1,33 @@
+.closed-modal {
+  display: none;
+}
+
+.modal-position {
+  position: relative;
+  .mask {
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: rgba(49, 61, 70, 0.65);
+  }
+  .modal-wrap{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 200;
+    .modal-content {
+      background-color: #ffffff;
+      width: 520px;
+      box-sizing: border-box;
+      position: relative;
+      top: 100px;
+      margin: 0 auto;
+      border-radius: 4px;
+    }
+  }
+}
