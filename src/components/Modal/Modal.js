@@ -3,7 +3,6 @@ import './Modal.scss'
 
 const Modal = (props) =>{
   const {openModal, setOpenModal} = props
-  console.log(setOpenModal)
   return <>
   {openModal ?
   (<div className='opened-modal'>
@@ -24,8 +23,8 @@ const Modal = (props) =>{
   </div>
   )
   :
-  (<div className='closed-modal'>
-  </div>)}
+    null
+  }
   </>
 }
 

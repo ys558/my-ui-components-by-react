@@ -1,16 +1,23 @@
 import React from 'react';
 import './Steps.scss'
 
+const StepsByData = (stepsData) => <Steps currentStep={stepsData.findIndex(i=> i.status === 'current')}>
+{
+  stepsData.map((item, index) => {
+      const {title, status, date} = item
+      return <Step ctx={title} status={status} date={date} key={index} />
+    })
+}
+</Steps>
+
 const Steps = (props) => {
   const { currentStep } = props
   return (
     <div className='steps'>
-      {
-        React.Children.map(props.children, (child, index) => {
+      {React.Children.map(props.children, (child, index) => {
           const length = React.Children.count(props.children)
           return React.cloneElement(child, { index, currentStep, length })
-        })
-      }
+        })}
     </div>
   )
 }
@@ -32,17 +39,11 @@ const Step = (props) => {
 
 const stepIcon = (status) => {
   if (status === 'reached'){
-    return <>
-          <div className='step-icon'>{' '}</div>
-      </>
+    return <div className='step-icon'>{' '}</div>
   }else if(status === 'current'){
-    return <>
-          <div className='step-icon-current'>{' '}</div>
-      </>
+    return <div className='step-icon-current'>{' '}</div>
   }else if(status === 'not reach'){
-    return <>
-          <div className='step-icon-not-reach'>{' '}</div>
-      </>
+    return <div className='step-icon-not-reach'>{' '}</div>
   }
 }
 
@@ -58,4 +59,4 @@ const stepTail = (index, length, currentStep) => {
 }
 
 
-export { Step, Steps }
+export { Step, Steps, StepsByData }
