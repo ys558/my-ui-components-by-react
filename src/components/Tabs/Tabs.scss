@@ -1,0 +1,27 @@
+
+.title-wrap{
+  .title {
+    display: inline;
+    
+    cursor: pointer;
+    &-active {
+      display: inline;
+      color: red;
+    }
+  }
+}
+
+
+.content {
+  &-block {
+    // position: absolute;
+    top: 3rem;
+    display: block;
+  }
+  &-none {
+    // position: absolute;
+    top: 3rem;
+    display: none;
+  }
+}
+

@@ -15,7 +15,7 @@ const Steps = (props) => {
   return (
     <div className='steps'>
       {React.Children.map(props.children, (child, index) => {
-          const length = React.Children.count(props.children)
+        const length = React.Children.count(props.children)
           return React.cloneElement(child, { index, currentStep, length })
         })}
     </div>
